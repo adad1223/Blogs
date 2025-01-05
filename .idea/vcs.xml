@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="VcsDirectoryMappings">
+    <mapping directory="" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/API_Gateway" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Auth-Service" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Blog" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Blog/src/main/java/org/example/blog/Controller" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Coding-Blocks-Intern" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Comments" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Eureka-Server" vcs="Git" />
+  </component>
+</project>

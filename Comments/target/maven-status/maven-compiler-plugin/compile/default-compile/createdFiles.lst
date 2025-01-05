@@ -1,0 +1,5 @@
+org/example/comments/Model/Comment.class
+org/example/comments/Service/CommentService.class
+org/example/comments/CommentsApplication.class
+org/example/comments/Controller/CommentController.class
+org/example/comments/Repo/CommentRepo.class
