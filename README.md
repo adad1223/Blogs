@@ -4,7 +4,6 @@ This project is a **microservices-based application** designed to manage users, 
 
 ## Table of Contents
 - [Overview](#overview)
-- [Architecture](#architecture)
 - [Endpoints](#endpoints)
   - [User Service](#user-service)
   - [Blog Service](#blog-service)
@@ -21,29 +20,6 @@ The application comprises three services:
 3. **Comment Service**: Facilitates adding and retrieving comments for blog posts.
 
 This system demonstrates how to structure a scalable, secure, and modular application using modern software development practices.
-
----
-
-## Architecture
-
-The project follows a microservices architecture. Each service is independent, communicates via **REST APIs**, and stores data in its own **PostgreSQL database**.
-
-### Key Features:
-- **JWT Authentication** for secure communication.
-- **Dockerized Services** for consistent deployment.
-- **Kubernetes** for orchestration and scaling.
-
-### Suggested Image:  
-Include a high-level architecture diagram showing the services and how they interact. You can create this using tools like:
-- [Draw.io](https://app.diagrams.net/)
-- Microsoft Visio
-- Figma  
-
-Example diagram:
-- Boxes representing services (User, Blog, Comment).
-- Arrows for API communication.
-- A database icon for each service.
-
 ---
 
 ## Endpoints
@@ -85,6 +61,7 @@ Example diagram:
 1. Clone the repository.
    ```bash
    git clone https://github.com/your-repo/microservices-blog-app.git
+   ```
 2.Navigate to the project directory
   ```bash
   cd microservices-blog-app
