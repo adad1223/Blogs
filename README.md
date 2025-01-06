@@ -2,6 +2,10 @@
 
 This project is a **microservices-based application** designed to manage users, blogs, and comments. It uses **Docker and Kubernetes** for scalability and modern security practices like **JWT for authentication** and **bcrypt for password hashing**.
 
+## Deployment Link:
+http://52.20.253.94:9000
+
+
 ## Table of Contents
 - [Overview](#overview)
 - [Endpoints](#endpoints)
@@ -10,6 +14,7 @@ This project is a **microservices-based application** designed to manage users, 
   - [Comment Service](#comment-service)
 - [Tech Stack](#tech-stack)
 - [Setup and Installation](#setup-and-installation)
+- [Usage][#Usage]
 ---
 
 ## Overview
@@ -80,5 +85,48 @@ The API Gateway will be accessible at the following URL:
 ```bash
 http://localhost:9000
 ```
+
+##Usage
+1.In Postman enter the URL http://52.20.253.94:9000/auth/register under Post request
+
+Sample Body
+```
+{
+    "email":"xyz@gmail.com",
+    "password":"123",
+    "name":"xyz",
+    "role":"ADMIN"
+}
+```
+2.Now for logging in enter the URL http://52.20.253.94:9000/auth/login under Post request
+
+Sample Body
+```
+{ 
+    "email":"xyz@gmail.com",
+    "password":"123"
+}
+```
+On successfully completing login you will recieve a JWT valid for 3 minutes
+
+3.Now you can access any service by pasting the JWT in Authorization tab under Bearer Token
+4.Sample Bodies for Post requests
+a.Blogs
+```
+{
+    "title":"1",
+    "content":"This for Test"
+}
+```
+b.Comments
+```
+{ 
+    "parent":"11",
+    "content":"TEST"
+}
+```
+
+
+
 
   
