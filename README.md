@@ -14,7 +14,7 @@ http://52.20.253.94:9000
   - [Comment Service](#comment-service)
 - [Tech Stack](#tech-stack)
 - [Setup and Installation](#setup-and-installation)
-- [Usage][#Usage]
+- [Usage](#Usage)
 ---
 
 ## Overview
@@ -86,7 +86,7 @@ The API Gateway will be accessible at the following URL:
 http://localhost:9000
 ```
 
-##Usage
+## Usage
 1.In Postman enter the URL http://52.20.253.94:9000/auth/register under Post request
 
 Sample Body
