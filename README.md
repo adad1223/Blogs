@@ -55,7 +55,6 @@ This system demonstrates how to structure a scalable, secure, and modular applic
 - **Authentication**: JWT, bcrypt
 - **Databases**: PostgreSQL
 - **Containerization**: Docker
-- **Orchestration**: Kubernetes
 - **API Gateway**: Spring Cloud Gateway
 - **Service Discovery**: Eureka Server
 
