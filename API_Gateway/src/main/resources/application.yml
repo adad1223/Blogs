@@ -24,7 +24,7 @@ spring:
         - id: Comment
           uri: lb://COMMENTS
           predicates:
-            - Path=/Comments/**
+            - Path=/comments/**
           filters:
             - AuthenticationFilter
 
