@@ -11,7 +11,9 @@ public class Comment {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String parent; // Ensure this field name matches the method name in the repository
+    private String parent;
+    private String content;
+    private String email;
 
     // Getters and setters
     public Long getId() {
@@ -28,5 +30,21 @@ public class Comment {
 
     public void setParent(String parent) {
         this.parent = parent;
+    }
+
+    public String getContent() {
+        return content;
+    }
+
+    public void setContent(String content) {
+        this.content = content;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 }
