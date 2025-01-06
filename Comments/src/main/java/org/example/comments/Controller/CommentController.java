@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/comments")
+@RequestMapping
 public class CommentController {
 
     @Autowired
@@ -17,14 +17,14 @@ public class CommentController {
 
     // Add a new comment
     @PostMapping("/comments")
-    public Comment addComment(@RequestBody Comment comment,@RequestHeader("LoggedinUser") String user) {
-//        comment.setAuthor(user);
+    public Comment addComment(@RequestBody Comment comment,@RequestHeader("loggedinuser") String loggedinuser) {
+        comment.setEmail(loggedinuser);
         return commentService.addComment(comment);
     }
 
     // Get comments for a specific blog post
     @GetMapping("/comments/{post_id}")
-    public List<Comment> getCommentsByPostId(@PathVariable String postId) {
+    public List<Comment> getCommentsByPostId(@PathVariable("post_id") String postId) {
         return commentService.getCommentsByPostId(postId);
     }
 }
