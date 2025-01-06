@@ -84,7 +84,7 @@ services:
       - my_network
 
   comment:
-    image: anish1279/comments:v1
+    image: anish1279/comment:v2
     ports:
       - "8084:8084"
     depends_on:
@@ -97,7 +97,7 @@ services:
       - my_network
 
   api-gateway:
-    image: anish1279/api-gateway:v1
+    image: anish1279/api-gateway:v2
     ports:
       - "9000:9000"
     depends_on:
