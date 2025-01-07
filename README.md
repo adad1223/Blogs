@@ -109,7 +109,9 @@ Sample Body
 On successfully completing login you will recieve a JWT valid for 3 minutes
 
 3.Now you can access any service by pasting the JWT in Authorization tab under Bearer Token
+
 4.Sample Bodies for Post requests
+
 a.Blogs
 ```
 {
