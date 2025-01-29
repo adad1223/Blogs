@@ -1,0 +1,58 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: postgresql2-pvc
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 1Gi
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: postgresql2
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: postgresql2
+  template:
+    metadata:
+      labels:
+        app: postgresql2
+    spec:
+      containers:
+        - name: postgresql2
+          image: postgres:17
+          ports:
+            - containerPort: 5432
+          env:
+            - name: POSTGRES_USER
+              value: "postgres"
+            - name: POSTGRES_PASSWORD
+              value: "12345"
+            - name: POSTGRES_DB
+              value: "Blog"
+          volumeMounts:
+            - mountPath: /var/lib/postgresql/data
+              name: postgresql2-storage
+      volumes:
+        - name: postgresql2-storage
+          persistentVolumeClaim:
+            claimName: postgresql2-pvc
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: postgresql2
+spec:
+  selector:
+    app: postgresql2
+  ports:
+    - protocol: TCP
+      port: 5432
+      targetPort: 5432

@@ -1,0 +1,40 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: blogs-service
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: blogs-service
+  template:
+    metadata:
+      labels:
+        app: blogs-service
+    spec:
+      containers:
+        - name: blogs-service
+          image: anish1279/blog:v1
+          ports:
+            - containerPort: 8090
+          env:
+            - name: SPRING_DATASOURCE_URL
+              value: "jdbc:postgresql://postgresql2:5432/Blog"
+            - name: SPRING_DATASOURCE_USERNAME
+              value: "postgres"
+            - name: SPRING_DATASOURCE_PASSWORD
+              value: "12345"
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: blogs-service
+spec:
+  selector:
+    app: blogs-service
+  ports:
+    - protocol: TCP
+      port: 8090
+      targetPort: 8090
+  type: ClusterIP
