@@ -18,6 +18,8 @@ spec:
           ports:
             - containerPort: 8090
           env:
+            - name: EUREKA_INSTANCE_HOSTNAME
+              value: blogs-service
             - name: SPRING_DATASOURCE_URL
               value: "jdbc:postgresql://postgresql2:5432/Blog"
             - name: SPRING_DATASOURCE_USERNAME

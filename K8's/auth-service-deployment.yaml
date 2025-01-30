@@ -15,14 +15,20 @@ spec:
         app: auth-service
     spec:
       containers:
-      - name: auth-service
-        image: anish1279/auth:v1
-        ports:
-        - containerPort: 9898
-        env:
-        - name: SPRING_DATASOURCE_URL
-          value: jdbc:postgresql://postgresql:5432/User
-        - name: SPRING_DATASOURCE_USERNAME
-          value: "postgres"
-        - name: SPRING_DATASOURCE_PASSWORD
-          value: "12345"
+        - name: auth-service
+          image: anish1279/auth:v1
+          ports:
+            - containerPort: 9898
+          env:
+            - name: EUREKA_INSTANCE_HOSTNAME
+              value: auth-service
+            - name: SPRING_DATASOURCE_URL
+              value: jdbc:postgresql://postgresql:5432/User
+            - name: SPRING_DATASOURCE_USERNAME
+              value: "postgres"
+            - name: SPRING_DATASOURCE_PASSWORD
+              value: "12345"
+            - name: POD_IP
+              valueFrom:
+                fieldRef:
+                  fieldPath: status.podIP

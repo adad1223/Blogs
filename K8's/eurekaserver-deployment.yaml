@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: eurekaserver
-        image: anish1279/eurekaserver:v1
+        image: anish1279/eurekaserver:v2
         ports:
         - containerPort: 8761
         

@@ -18,6 +18,8 @@ spec:
           ports:
             - containerPort: 8084
           env:
+            - name: EUREKA_INSTANCE_HOSTNAME
+              value: comment-service
             - name: SPRING_DATASOURCE_URL
               value: "jdbc:postgresql://postgresql3:5432/Comment"
             - name: SPRING_DATASOURCE_USERNAME
